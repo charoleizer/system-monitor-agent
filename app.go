@@ -1,9 +1,11 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/charoleizer/system-agent/core"
 )
 
 func main() {
-	core.GetDiskUsage()
+	fmt.Println(string(core.GetDiskUsage()))
 }

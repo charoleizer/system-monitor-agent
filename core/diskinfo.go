@@ -2,7 +2,6 @@ package core
 
 import (
 	"encoding/json"
-	"fmt"
 	"syscall"
 
 	"github.com/charoleizer/system-agent/utils"
@@ -41,7 +40,7 @@ const (
 	MAXPERCENT = 100
 )
 
-func GetDiskUsage() {
+func GetDiskUsage() string {
 	disk := DiskUsage("/")
 
 	disk.Total = utils.RoundTo(disk.Total/GB, 2)
@@ -51,5 +50,5 @@ func GetDiskUsage() {
 	disk.Available_Percent = utils.RoundTo(disk.Available_Percent, 2)
 
 	response, _ := json.Marshal(disk)
-	fmt.Println(string(response))
+	return string(response)
 }
