@@ -23,11 +23,3 @@ jobs:
 
     - name: Test
       run: go test -v ./...
-      
-    - name: Test & publish code coverage
-      uses: paambaati/codeclimate-action@v2.7.5
-      env:
-        CC_TEST_REPORTER_ID: 484b9580cb4374684456dff485f56750f7af5221ff9a7e25c9e86678097652fd
-      with:
-        coverageCommand: npm run coverage
-        debug: true
